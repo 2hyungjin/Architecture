@@ -27,4 +27,9 @@ class MainActivity : AppCompatActivity(),Contract.View{
         val t=edt.text.toString()
         presenter.setData(t)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.detachView()
+    }
 }
