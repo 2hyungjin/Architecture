@@ -4,10 +4,10 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-private const val BASE_URL="https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?"
+private const val BASE_URL="https://api.github.com/"
 interface MovieRetrofit {
-    @GET("key=11dce64cfff9d2bbb48279ce517a092c&targetDt=20201230")
-    fun getMovie():Call<Movie>
+    @GET("users")
+    fun getMovie():Call<User>
 
     companion object{
         val getRetro = {
