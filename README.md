@@ -34,11 +34,16 @@
 
 **V**iew : UI (Activity, Fragment ...)
 
-**P**resenter : Controller와 유사한 역할을 하지만 인터페이스로 연결되어 종속성을 줄임
+**P**resenter : Controller와 유사한 역할을 하지만 인터페이스로 연결되어 종속성을 줄임 (View와 1:1로 연결)
 
 Model과 View의 의존성이 낮아져 유지보수와 테스트에 장점이 있지만 View와 Presenter사이의 의존성이 강하다.
 
 [공부한 사이트][https://thdev.tech/androiddev/2016/10/23/Android-MVC-Architecture/]
+---
+### - MVVM
+**M**odel :
+**V**iew**M**odel :
+**M**odel :
 
 
 
