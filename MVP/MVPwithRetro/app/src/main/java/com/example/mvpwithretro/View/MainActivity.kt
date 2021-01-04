@@ -25,6 +25,10 @@ class MainActivity : AppCompatActivity(),MainContract.View {
         }
     }
 
+    override fun onDestroy() {
+        presenter.detachV()
+        super.onDestroy()
+    }
     override fun showPB() {
         //show progress bar
         TODO("Not yet implemented")

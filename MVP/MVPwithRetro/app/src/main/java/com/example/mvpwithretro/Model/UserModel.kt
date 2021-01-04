@@ -14,7 +14,6 @@ class UserModel : MainContract.Model{
         MovieRetrofit.getRetro().getMovie().enqueue(object :Callback<User>{
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 val res=response.body()
-                Log.d("TAG",res.toString())
                 onFinishedListener.onFinished(res!!)
             }
 
