@@ -39,7 +39,9 @@
 Model과 View의 의존성이 낮아져 유지보수와 테스트에 장점이 있지만 View와 Presenter사이의 의존성이 강하다.
 
 [공부한 사이트][https://thdev.tech/androiddev/2016/10/23/Android-MVC-Architecture/]
+
 ---
+
 ### - MVVM
 
 **M**odel : 데이터를 저장 및 처리, 비즈니스 로직
