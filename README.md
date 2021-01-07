@@ -46,15 +46,8 @@ Model과 View의 의존성이 낮아져 유지보수와 테스트에 장점이 �
 
 **M**odel : 데이터를 저장 및 처리, 비즈니스 로직
 
-**V**iew : UI, MVVM에서 View는 ViewModel의 데이터의 변경을 주시(Observe)하고 변경이 있다면 UI에 반영한다.
+**V**iew : UI, MVVM에서 View는 ViewModel의 데이터 바인딩을 통해 데이터의 변경을 주시(Observe)하고 변경이 있다면 UI에 반영한다.
 
 **V**iew**M**odel : Model에서 제공받은 데이터를 가공하고 이벤트를 보낸다. (View와 1:n으로 결합할 수 있으며 View에 대한 내용을 참조해서는 안된다.)
 
 MVP 패턴의 View와 Presenter 사이의 높은 의존성을 보완하기 위해 만들어진 패턴
-
-
-
-
-
-
-
