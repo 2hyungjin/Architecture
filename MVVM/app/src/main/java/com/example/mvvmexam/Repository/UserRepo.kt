@@ -10,6 +10,5 @@ class UserRepo (application: Application) {
     private val userList:LiveData<List<User>> = dao.selectA()
 
     fun insertUser(user:User){
-    ViewModel
     }
 }
