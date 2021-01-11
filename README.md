@@ -51,3 +51,8 @@ Model과 View의 의존성이 낮아져 유지보수와 테스트에 장점이 �
 **V**iew**M**odel : Model에서 제공받은 데이터를 가공하고 이벤트를 보낸다. (View와 1:n으로 결합할 수 있으며 View에 대한 내용을 참조해서는 안된다.)
 
 MVP 패턴의 View와 Presenter 사이의 높은 의존성을 보완하기 위해 만들어진 패턴
+
+**AAC (Android Architecture Components)** 을 사용하면 편함 Ex) Room(내부 저장소), LiveData, ViewModel(AAC) ...
+
+
+
