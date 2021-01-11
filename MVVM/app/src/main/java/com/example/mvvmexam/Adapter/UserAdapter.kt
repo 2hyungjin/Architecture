@@ -32,6 +32,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserVH>() {
     override fun getItemCount(): Int {
         return userList.size
     }
+    //List update 함수
     fun setList(list:List<User>){
         userList=list
         notifyDataSetChanged()

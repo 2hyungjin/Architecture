@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             userVM.insert(User("Lee", 1))
         }
     }
-
+    //초기화
     fun init() {
         userVM = ViewModelProvider(this).get(UserVM::class.java)
         binding = DataBindingUtil.setContentView<ActivityMainBinding>(

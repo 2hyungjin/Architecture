@@ -8,6 +8,8 @@ import androidx.room.RoomDatabase
 @Database(entities = [User::class],version = 1)
 abstract class UserDB():RoomDatabase(){
     abstract fun getDao():UserDao
+
+    //싱글톤 Instance
     companion object{
         private var INSTANCE : UserDB?=null
         fun getDao(context: Context): UserDao {

@@ -12,8 +12,12 @@ import java.util.*
 
 class UserRepo (application: Application) {
     private val dao=UserDB.getDao(application)
+
+    //리스트 받아오기
     private val userList:LiveData<List<User>> = dao.selectA()
+    //리스트 반환
     fun getAll()=userList
+    //insert
     suspend fun insertUser(user:User){
         dao.insert(user)
     }
