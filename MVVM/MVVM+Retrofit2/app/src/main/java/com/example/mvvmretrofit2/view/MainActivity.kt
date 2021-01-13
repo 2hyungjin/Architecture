@@ -1,7 +1,8 @@
-package com.example.mvvmretrofit2
+package com.example.mvvmretrofit2.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mvvmretrofit2.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
