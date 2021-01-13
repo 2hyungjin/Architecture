@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tv_name"
@@ -20,4 +20,4 @@
         android:text="TextView"
         tools:layout_editor_absoluteX="152dp"
         tools:layout_editor_absoluteY="34dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
