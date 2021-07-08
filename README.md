@@ -2,7 +2,7 @@
 
 ### 디자인 패턴이란
 
-소프트웨어 분야에서 디자인 패턴이란 특정 문맥에서 공통적으로 발생하는 문제에 대한 재사용 가능한 해결책이다. (출처 [위키 백과][https://ko.wikipedia.org/wiki/소프트웨어_디자인_패턴])
+소프트웨어 분야에서 디자인 패턴이란 특정 문맥에서 공통적으로 발생하는 문제에 대한 재사용 가능한 해결책이다. (출처 [위키 백과](https://ko.wikipedia.org/wiki/소프트웨어_디자인_패턴))
 
 ---
 
@@ -38,7 +38,7 @@
 
 Model과 View의 의존성이 낮아져 유지보수와 테스트에 장점이 있지만 View와 Presenter사이의 의존성이 강하다.
 
-[공부한 사이트][https://thdev.tech/androiddev/2016/10/23/Android-MVC-Architecture/]
+[공부한 사이트](https://thdev.tech/androiddev/2016/10/23/Android-MVC-Architecture/)
 
 ---
 
