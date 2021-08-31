@@ -3,16 +3,16 @@ package com.example.cleanarchitecture.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import com.example.cleanarchitecture.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cleanarchitecture.adapter.UserListAdapter
 import com.example.cleanarchitecture.databinding.ActivityMainBinding
 import com.example.cleanarchitecture.viewmodel.UserViewModel
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private val userViewModel: UserViewModel by viewModels()
+    lateinit var userListAdapter: UserListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -21,13 +21,23 @@ class MainActivity : AppCompatActivity() {
         observe()
         getUsers()
         binding.btnSearch.setOnClickListener {
-            getUser()
+            val id = binding.edtQuery.text.toString()
+            getUser(id)
+        }
+    }
+
+    private fun recyclerViewInit() {
+        userListAdapter = UserListAdapter()
+        val rv = binding.rvBoardMain
+        rv.apply {
+            adapter = userListAdapter
+            layoutManager = LinearLayoutManager(this@MainActivity)
         }
     }
 
     private fun observe() {
         userViewModel.users.observe(this, Observer {
-
+            userListAdapter.notifyDataSetChanged()
         })
     }
 
