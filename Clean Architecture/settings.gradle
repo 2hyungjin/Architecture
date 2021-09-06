@@ -1,2 +1,0 @@
-include ':presentation'
-rootProject.name = "CleanArchetectureExam"
