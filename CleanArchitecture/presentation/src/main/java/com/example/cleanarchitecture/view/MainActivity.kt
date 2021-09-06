@@ -8,10 +8,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cleanarchitecture.adapter.UserListAdapter
 import com.example.cleanarchitecture.databinding.ActivityMainBinding
 import com.example.cleanarchitecture.viewmodel.UserViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    private val userViewModel: UserViewModel by viewModels()
+    private val userViewModel: UserViewModel by viewModel()
     lateinit var userListAdapter: UserListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,10 +21,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         observe()
         getUsers()
-        binding.btnSearch.setOnClickListener {
-            val id = binding.edtQuery.text.toString()
-            getUser(id)
-        }
     }
 
     private fun recyclerViewInit() {
@@ -41,11 +38,8 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun getUsers() {
+    private fun getUsers() {
         userViewModel.getUsers()
     }
 
-    fun getUser(id: String) {
-        userViewModel.getUser(id)
-    }
 }

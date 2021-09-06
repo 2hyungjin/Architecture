@@ -2,19 +2,22 @@ package com.example.data.datasource
 
 import com.example.data.api.UserApi
 import com.example.data.model.UserResponse
+import com.example.domain.model.User
 
 interface UserDataSource {
     suspend fun getUsers(): List<UserResponse>
-    suspend fun getUser(id: String): UserResponse
 }
 
 class UserDataSourceImpl(private val userApi: UserApi) : UserDataSource {
     override suspend fun getUsers(): List<UserResponse> {
-        return userApi.getUsers()
+        userApi.getUsers().let {
+            if (it.isSuccessful) {
+                return it.body()!!
+            } else {
+                return emptyList()
+            }
+        }
     }
 
-    override suspend fun getUser(id: String): UserResponse {
-        return userApi.getUser(id)
-    }
 
 }

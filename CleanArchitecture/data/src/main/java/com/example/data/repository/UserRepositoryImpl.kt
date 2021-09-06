@@ -10,8 +10,4 @@ class UserRepositoryImpl(private val userDataSource: UserDataSource) : UserRepos
         return UserMapper().toUsers(userDataSource.getUsers())
     }
 
-    override suspend fun getUser(id: String): User {
-        return UserMapper().toUser(userDataSource.getUser(id))
-    }
-
 }

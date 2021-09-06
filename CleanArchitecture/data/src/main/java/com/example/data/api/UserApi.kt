@@ -9,10 +9,5 @@ import retrofit2.http.Path
 
 interface UserApi {
     @GET("/users")
-    suspend fun getUsers(): List<UserResponse>
-
-    @GET("/users/{id}")
-    suspend fun getUser(@Path("id") id: String): UserResponse
-
-
+    suspend fun getUsers(): Response<List<UserResponse>>
 }
