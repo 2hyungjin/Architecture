@@ -1,6 +1,6 @@
-package com.example.cleanarchitecture
+package com.example.cleanarchitecture.di
 
-import com.example.data.UserApi
+import com.example.data.api.UserApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,8 +10,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-object HiltModule {
+@InstallIn(ApplicationComponent::class)
+object Retrofit2Module {
     const val BASE_URL = "https://api.github.com/"
+
     @Provides
     @Singleton
     fun provideRetrofit(): UserApi {
@@ -21,7 +23,6 @@ object HiltModule {
             .build()
             .create(UserApi::class.java)
     }
-
 
 
 }

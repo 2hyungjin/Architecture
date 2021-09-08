@@ -1,4 +1,4 @@
-package com.example.domain.dto
+package com.example.domain.model
 
 data class User(
     val name: String,

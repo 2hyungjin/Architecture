@@ -1,8 +1,8 @@
 package com.example.domain.repository
 
-import com.example.domain.dto.User
+import com.example.domain.model.Result
+import com.example.domain.model.User
 
 interface UserRepository {
-    suspend fun getUserList(): List<User>
-
+    suspend fun getUserList(): Result<List<User>>
 }
