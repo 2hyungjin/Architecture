@@ -5,4 +5,5 @@ import com.example.domain.model.Result
 
 interface UserDataSource {
     suspend fun getUserList(): Result<List<UserResponse>>
+    suspend fun getUser(id: String): Result<UserResponse>
 }

@@ -22,6 +22,10 @@ class MainActivity : AppCompatActivity() {
         rvInit()
         observe()
         userViewModel.getUserList()
+
+        binding.button.setOnClickListener {
+            userViewModel.getUser(binding.edtIdMain.text.toString())
+        }
     }
 
     private fun rvInit() {

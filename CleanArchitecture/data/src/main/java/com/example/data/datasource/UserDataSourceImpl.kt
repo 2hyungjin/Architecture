@@ -16,4 +16,13 @@ class UserDataSourceImpl
         }
     }
 
+    override suspend fun getUser(id: String): Result<UserResponse> {
+        val response = userApi.getUser(id)
+        if (response.isSuccessful) {
+            return Result.Success(response.body()!!)
+        } else {
+            return Result.Failure(response.code(), response.message())
+        }
+    }
+
 }

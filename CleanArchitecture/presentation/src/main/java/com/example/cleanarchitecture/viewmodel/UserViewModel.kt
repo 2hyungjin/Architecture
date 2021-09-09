@@ -9,10 +9,14 @@ import com.example.domain.model.Result.Success
 import com.example.domain.model.Result.Failure
 import com.example.domain.model.User
 import com.example.domain.usecase.GetUserListUseCase
+import com.example.domain.usecase.GetUserUseCase
 import kotlinx.coroutines.launch
 
 class UserViewModel
-@ViewModelInject constructor(private val getUserListUseCase: GetUserListUseCase) : ViewModel() {
+@ViewModelInject constructor(
+    private val getUserListUseCase: GetUserListUseCase,
+    private val getUserUseCase: GetUserUseCase
+) : ViewModel() {
     private val _userList = MutableLiveData<List<User>>()
     val userList: LiveData<List<User>> = _userList
     val isLoading = MutableLiveData<Boolean>(false)
@@ -29,8 +33,21 @@ class UserViewModel
                     onError(result.message)
                 }
             }
+        }
+    }
 
-
+    fun getUser(id: String) {
+        isLoading.value = true
+        viewModelScope.launch {
+            when (val result = getUserUseCase.execute(id)) {
+                is Success -> {
+                    val list= listOf<User>(result.data)
+                    _userList.postValue(list)
+                }
+                is Failure -> {
+                    onError(result.message)
+                }
+            }
         }
     }
 
